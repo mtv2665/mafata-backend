@@ -44,8 +44,9 @@ async def unlock_shughul(file: UploadFile = File(...)):
         return json.loads(response.text)
 
     except Exception as e:
-        return {
-            "roast": "الماسورة ضربت، السيرفر محتاج عمرة", 
-            "score": 0, 
-            "title": "خطأ تقني 🔧"
-        }
+    print(f"MAFATAL_ERROR: {str(e)}") # دي حتطبع لينا العلة الحقيقية في الـ Logs
+    return {
+        "roast": f"الماسورة ضربت بسبب: {str(e)[:20]}...", 
+        "score": 0, 
+        "title": "خطأ تقني 🔧"
+    }
