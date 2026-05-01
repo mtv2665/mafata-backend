@@ -20,8 +20,8 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
-        "http://127.0.0.1:5173"
-        # Add production domain here later, e.g., "https://miftah.app"
+        "http://127.0.0.1:5173",
+        "https://mafata-frontend.vercel.app" # Production Vercel Domain
     ],
     allow_methods=["*"],
     allow_headers=["*"],
